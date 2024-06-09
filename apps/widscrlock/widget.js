@@ -25,7 +25,9 @@
 	Bangle.on('touch', function(button, xy) {
 		if(xy.x>=scrlock.x && xy.x<=scrlock.x+23 && xy.y>=scrlock.y && xy.y<=scrlock.y+23) {
 			options = Bangle.getOptions(); // Store current Timeout settings.
+			Bangle.showClock(); // Show the clock
 			Bangle.setLCDTimeout(0.1); // Lock screen.
+			
 			setTimeout(restoreTimeout, 1000);
 		}
 	});
